@@ -2,9 +2,13 @@
 <html>
 <head>
     <title>Web AUdio with User media stream</title>
+    <script type="text/javascript" src="jquery-1.8.0.min.js"></script>
     <!-- http://html5-apps.appspot.com/webaudiowithstream/index.html -->
+
+
     <script src="adapter.js"></script>
     <script src="loadMedia.js"></script>
+
 
     <style>
         canvas{
@@ -21,16 +25,25 @@
 
 <canvas height=300 width=500 id="cnv"></canvas>
 
+<script src="equalizer.js"></script>
+
 <button onclick="getAudio()" id="startAudio">Start</button>
 <button onclick="stop()"  id="stopAudio" disabled="true">Stop</button>
 
 <input type="text" name="url" id="url" value="wagner-short.ogg"/>
 <button onclick="byUrl();"  id="loadAudio" >Play</button>
 
-<audio src="wagner-short.ogg" id="wagnerAudio" autoplay></audio>
 
 
-<script src="equalizer.js"></script>
+<!--<audio src="wagner-short.ogg" id="wagnerAudio" autoplay></audio>-->
+
+
+<canvas id="canvas" width="600" height="130" style="display: block;"></canvas>
+
+<!--http://css.dzone.com/articles/exploring-html5-web-audio -->
+<!--<script src="standalone_equalizer.js"></script>-->
+<script src="standalone_full_spectrum_equalizer.js"></script>
+
 
 <script>
 
@@ -40,9 +53,11 @@
 
 //    gotStream(document.getElementById("wagnerAudio"));
 
-    peerConnection.onaddstream = function(event) {
-            gotStream(event.stream);
-    }
+//    peerConnection.onaddstream = function(event) {
+//            gotStream(event.stream);
+//    }
+
+
 
 </script>
 
